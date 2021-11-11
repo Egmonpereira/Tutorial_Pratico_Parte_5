@@ -135,7 +135,7 @@
                 triangleVertexPositionBuffer = gl.createBuffer();
                 gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
                 var vertices = [
-                    0.0, 1.0, 0.0,
+                    1.0, 1.0, 0.0,
                     -1.0,-1.0, 0.0,
                     1.0,-1.0, 0.0
                 ];
@@ -146,14 +146,26 @@
                 squareVertexPositionBuffer = gl.createBuffer();
                 gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
                 vertices = [
-                    1.0, 1.0, 0.0,
-                    -1.0, 1.0, 0.0,
+                    1.0, 1.5, 0.0,
+                    -1.0, 1.5, 0.0,
                     1.0,-1.0, 0.0,
                     -1.0,-1.0, 0.0
                 ];
                 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
                 squareVertexPositionBuffer.itemSize = 3;
                 squareVertexPositionBuffer.numItems = 4;
+                
+                square2VertexPositionBuffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, square2VertexPositionBuffer);
+                vertices = [
+                    1.0, 2.0, 0.0,
+                    -1.0, 2.0, 0.0,
+                    1.0,-1.0, 0.0,
+                    -1.0,-1.0, 0.0
+                ];
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+                square2VertexPositionBuffer.itemSize = 3;
+                square2VertexPositionBuffer.numItems = 4;
             }
 
             function iniciarAmbiente()  {
@@ -169,7 +181,7 @@
                 
                 // Desenhando Triângulo
                 var translation = vec3.create();
-                vec3.set (translation, -1.5, 1.0, -7.0); 
+                vec3.set (translation, -5, 1.0, -7.0); 
                 mat4.translate(mMatrix, mMatrix, translation);
                 gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
                 gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, triangleVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
@@ -177,12 +189,19 @@
                 gl.drawArrays(gl.TRIANGLES, 0, triangleVertexPositionBuffer.numItems);
                 
                 // Desenhando o Quadrado
-                vec3.set (translation, 3.0, 0.0, 0.0); 
+                vec3.set (translation, 2.1, 0.0, 0.0); 
                 mat4.translate(mMatrix, mMatrix, translation);
                 gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
                 gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, squareVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
                 setMatrixUniforms();
                 gl.drawArrays(gl.TRIANGLE_STRIP, 0, squareVertexPositionBuffer.numItems);
+
+                vec3.set (translation, 2.1, 0.0, 0.0); 
+                mat4.translate(mMatrix, mMatrix, translation);
+                gl.bindBuffer(gl.ARRAY_BUFFER, square2VertexPositionBuffer);
+                gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, square2VertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+                setMatrixUniforms();
+                gl.drawArrays(gl.TRIANGLE_STRIP, 0, square2VertexPositionBuffer.numItems);
             }
 
             function setMatrixUniforms()    {
@@ -212,13 +231,22 @@
         </script>
     </head>
     <body>
-        <center>
-            <canvas id="canvas-webgl" 
-            width="768px" 
-            height="432px" 
-            style="border:none">
-            </canvas>
-            <p>768 x 432 = 16:9</p>
-        </center>
+        <table>
+            <tr>
+                <td>
+                    <img src="imagens/modelo.jpg" width="70%">
+                </td>
+                <td>
+                    <center>
+                        <canvas id="canvas-webgl" 
+                        width="768px" 
+                        height="432px" 
+                        style="border:none">
+                        </canvas>
+                        <p>768 x 432 = 16:9</p>
+                    </center>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>

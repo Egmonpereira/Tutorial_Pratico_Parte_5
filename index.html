@@ -146,8 +146,8 @@
                 squareVertexPositionBuffer = gl.createBuffer();
                 gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
                 vertices = [
-                    1.0, 1.5, 0.0,
-                    -1.0, 1.5, 0.0,
+                    1.0, 1.75, 0.0,
+                    -1.0, 1.75, 0.0,
                     1.0,-1.0, 0.0,
                     -1.0,-1.0, 0.0
                 ];
@@ -158,8 +158,8 @@
                 square2VertexPositionBuffer = gl.createBuffer();
                 gl.bindBuffer(gl.ARRAY_BUFFER, square2VertexPositionBuffer);
                 vertices = [
-                    1.0, 2.0, 0.0,
-                    -1.0, 2.0, 0.0,
+                    1.0, 2.25, 0.0,
+                    -1.0, 2.25, 0.0,
                     1.0,-1.0, 0.0,
                     -1.0,-1.0, 0.0
                 ];
@@ -181,7 +181,7 @@
                 
                 // Desenhando Triângulo
                 var translation = vec3.create();
-                vec3.set (translation, -5, 1.0, -7.0); 
+                vec3.set (translation, -5, -1.0, -7.0); 
                 mat4.translate(mMatrix, mMatrix, translation);
                 gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
                 gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, triangleVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);

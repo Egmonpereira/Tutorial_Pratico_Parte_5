@@ -1,11 +1,31 @@
 body {
-    background-color: #000;
-  }
-  #circle {
-    width: 50px;
-    height: 50px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-    background: white;
-  }
+  background-color: #fff;
+}
+
+.circulo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; 
+  background-color: red;
+  margin: 50px;
+}
+.retanguloG {
+  width: 120px;
+  height: 180px;
+  border-radius: 0%;
+  background-color: red;
+  margin: 1px;
+}
+.retanguloM {
+  width: 120px;
+  height: 140px;
+  border-radius: 0%;
+  background-color: red;
+  margin: 1px;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}

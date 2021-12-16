@@ -1,0 +1,48 @@
+div{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+.roda1 {
+    position: relative;
+    left: -248px;
+    bottom: -60px;
+    width: 50%;
+    height: 50%;
+}
+.roda11 {
+    position: relative;
+    left: 173px;
+    bottom: 60px;
+    width: 50%;
+    height: 50%;
+}
+.roda2 {
+    position: relative;
+    left: 172px;
+    bottom: 60px;
+    width: 50%;
+    height: 50%;
+}
+.roda21 {
+    position: relative;
+    left: 48px;
+    bottom: 55px;
+    width: 50%;
+    height: 50%;
+}
+.engate {
+    position: relative;
+    bottom: 160px;
+    left: 45px;
+}
+.cabine1 {
+    position: relative;
+    bottom: 182px;
+    left: 430px;
+}
+.cabine2 {
+    position: relative;
+    bottom: 197px;
+    left: 331px;
+}
